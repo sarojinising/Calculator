@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +14,7 @@
       <input type="text" id="display" placeholder="0" readonly />
       <div>
         <button type="button" onclick="clearDisplay()">AC</button>
-        <button type="button" onclick="appendValue('*')">*</button>
+        <button type="button" onclick="removeLast()">⌫</button>
         <button type="button" onclick="appendValue('%')">%</button>
         <button type="button" onclick="appendValue('/')">/</button>
       </div>
@@ -53,6 +55,10 @@
       display.value = '';
     }
 
+    function removeLast() {
+      display.value = display.value.slice(0, -1);
+    }
+
     function calculateResult() {
       try {
         display.value = eval(display.value);
@@ -63,3 +69,4 @@
   </script>
 </body>
 </html>
+
